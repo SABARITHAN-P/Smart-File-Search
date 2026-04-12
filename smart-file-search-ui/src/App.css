@@ -1,0 +1,205 @@
+/* Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* Theme variables */
+:root {
+  --bg: #eef2f3;
+  --card: #ffffff;
+  --text: #333;
+  --input-bg: #ffffff;
+  --border: #ccc;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --hover: #0056b3;
+}
+
+.dark {
+  --bg: #121212;
+  --card: #1e1e1e;
+  --text: #f1f1f1;
+  --input-bg: #2a2a2a;
+  --border: #444;
+  --primary: #4dabf7;
+  --secondary: #868e96;
+  --hover: #339af0;
+}
+
+/* Container */
+.app-container {
+  min-height: 100vh;
+  width: 100%;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+/* Card */
+.card {
+  background: var(--card);
+  color: var(--text);
+  padding: 30px;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Title */
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--input-bg);
+  color: var(--text);
+  height: 42px; /* 🔥 SAME HEIGHT */
+  box-sizing: border-box;
+}
+
+.input:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+/* Search row (IMPORTANT FIX) */
+.search-row {
+  display: flex;
+  align-items: center; /* 🔥 vertical alignment fix */
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Make input expand */
+.search-input {
+  flex: 1;
+}
+
+/* Buttons */
+.button {
+  height: 42px; /* 🔥 SAME HEIGHT */
+  padding: 0 16px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0; /* 🔥 prevents shrinking */
+}
+
+/* Primary */
+.search-btn {
+  background: var(--primary);
+  color: white;
+}
+
+.search-btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+/* Secondary */
+.toggle-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Results */
+.results {
+  margin-top: 25px;
+  padding: 0;
+  list-style: none;
+}
+
+.result-item {
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* File name */
+.file-name {
+  color: var(--primary);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.file-name:hover {
+  text-decoration: underline;
+}
+
+/* Path */
+.file-path {
+  font-size: 12px;
+  color: #888;
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-end; /* 🔥 better than float */
+  margin-bottom: 10px;
+}
+
+/* Switch */
+.switch {
+  position: relative;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  display: none;
+}
+
+/* Slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #888;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background-color: var(--primary);
+}
+
+input:checked + .slider::before {
+  transform: translateX(20px);
+}

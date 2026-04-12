@@ -1,0 +1,14 @@
+# C++
+build/
+*.exe
+
+# Node
+api-server/node_modules/
+
+# React
+smart-file-search-ui/node_modules/
+smart-file-search-ui/dist/
+
+# OS
+.DS_Store
+Thumbs.db
