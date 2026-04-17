@@ -15,7 +15,7 @@ function SearchBar({
         <input
           className="input"
           type="text"
-          placeholder="Enter directory path"
+          placeholder="Enter directory path (e.g. C:\Users\YourName\Documents)"
           value={path}
           onChange={(e) => setPath(e.target.value)}
         />
