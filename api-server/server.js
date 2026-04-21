@@ -36,14 +36,15 @@ app.post("/search", (req, res) => {
 app.post("/open-file", (req, res) => {
   const { filePath } = req.body;
 
-  if (!filePath) {
+  console.log("Opening file:", filePath);
+
+  if (!filePath || filePath.trim() === "") {
     return res.status(400).json({ error: "Invalid file path" });
   }
 
-  const command = `start "" "${filePath}"`;
-
-  execFile("cmd", ["/c", command], (err) => {
+  execFile("cmd", ["/c", "start", "", filePath], (err) => {
     if (err) {
+      console.error(err);
       return res.status(500).json({ error: "Failed to open file" });
     }
     res.json({ success: true });

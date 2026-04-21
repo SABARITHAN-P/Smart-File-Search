@@ -11,6 +11,7 @@ function App() {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showPath, setShowPath] = useState(false);
+  const [hasSearched, setHasSearched] = useState(false);
 
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("theme") === "dark",
@@ -30,8 +31,11 @@ function App() {
 
     try {
       setLoading(true);
+      setHasSearched(true);
+
       const results = await searchFiles(path, query);
       setResults(results);
+
       setLoading(false);
     } catch (err) {
       console.error(err);
@@ -79,6 +83,8 @@ function App() {
           results={results}
           showPath={showPath}
           openFile={openFile}
+          loading={loading}
+          hasSearched={hasSearched}
         />
       </div>
     </div>
