@@ -4,6 +4,12 @@ A high-performance **full-stack file search system** that enables fast and effic
 
 ---
 
+## 🎥 Demo
+
+👉 Watch Demo Video: https://drive.google.com/file/d/1BuKv1lHhFVff-CamUlRgF6hCTpZ-XZhu/view?usp=sharing
+
+---
+
 ## 🚀 Overview
 
 This project provides a **fast, scalable, and user-friendly file search system** for large directories.
